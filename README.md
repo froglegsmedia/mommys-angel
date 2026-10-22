@@ -1,28 +1,45 @@
-# Mommy's Angel
+# Mommy’s Angel
 
-A single-page landing page for Mommy's Angel, a boutique pet couture atelier. Plain HTML and CSS, with a few lines of JavaScript for the waitlist confirmation. `index.html` lives at the repository root so GitHub Pages can serve it directly.
+Coming-soon landing page for Mommy’s Angel, a chic and funky house for people who raise their pets like family.
 
-Open `index.html` in a browser, or from this folder run:
+The page is a static site: `index.html`, `styles.css`, and `script.js`. It is ready for GitHub Pages.
+
+## What’s on the page
+
+- Hero, brand story, and the two lines: Sphynx cats, and every animal (household pets plus horses, cows, goats, and other livestock)
+- Placeholder products marked **Coming soon**, with prices **TBA**
+  - Food, the main line, including recipes formulated with lion’s mane to support calm
+  - Funky cat trees (a giant Sphynx, a wild jungle tree)
+  - Pet clothes in bright colors and bold prints
+- An ingredient note for lion’s mane
+- An email waitlist preview
+
+Copy stays on the nutrition side of the line. It does not claim to diagnose, treat, cure, or prevent anything. There are no testimonials, reviews, stats, or certifications.
+
+## Preview locally
+
+From the repository root:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:4173`.
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173).
 
-## Deploy with GitHub Pages
+## Waitlist TODO
 
-The workflow in [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes the site on every push to `main`.
+The signup form does **not** send or store email addresses. `script.js` only checks the address and shows a confirmation in the browser.
 
-1. Open **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Push to `main`, or run **Deploy static content to Pages** from the Actions tab.
-4. The site URL is shown on the workflow run and under **Settings → Pages**. For this repository it will look like `https://<owner>.github.io/mommys-angel/`.
+Before launch, connect it to a form service such as Formspree, Buttondown, Mailchimp, or your own endpoint. Then update the note in `#waitlist-note` so it matches what the service actually does.
 
-Paths in the page are relative, so it works on a project site (`/mommys-angel/`) and at a domain root.
+## GitHub Pages
 
-If you would rather deploy without Actions: **Settings → Pages → Deploy from a branch**, branch `main`, folder **`/ (root)`**. The [`.nojekyll`](.nojekyll) file is included so Jekyll does not process the site.
+The workflow in `.github/workflows/pages.yml` publishes the site on every push to `main`.
 
-## Waitlist
+One-time setup:
 
-The signup is front-end only. Submitting it confirms on the page and does not store or send the address. The form's `mailto` action is a fallback for browsers with JavaScript disabled. Replace `hello@mommysangel.example` in `index.html` with your own address, and connect a form provider before you treat the list as real.
+1. Merge the site to `main`.
+2. Open **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+The project URL should look like `https://froglegsmedia.github.io/mommys-angel/`. Asset paths are relative, so the page works at a project-site subpath or a custom domain.
